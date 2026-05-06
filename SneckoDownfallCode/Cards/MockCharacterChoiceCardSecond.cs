@@ -5,7 +5,7 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
 
-[Pool(typeof(StatusCardPool))]
+[Pool(typeof(TokenCardPool))]
 public class MockCharacterChoiceCardSecond : SneckoDownfallCard
 {
     // public string CopiedPortraitPath = "";
@@ -13,7 +13,7 @@ public class MockCharacterChoiceCardSecond : SneckoDownfallCard
     // public override string PortraitPath => CopiedPortraitPath;
     // public override string BetaPortraitPath => CopiedBetaPortraitPath;
 
-    public MockCharacterChoiceCardSecond() : base(0, CardType.Status, CardRarity.Status, TargetType.None)
+    public MockCharacterChoiceCardSecond() : base(0, CardType.Status, CardRarity.Token, TargetType.None)
     {
         WithVar(new StringVar("Characters"));
     }
