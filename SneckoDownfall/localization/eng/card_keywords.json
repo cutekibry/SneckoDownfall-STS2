@@ -1,0 +1,14 @@
+{
+    "SNECKODOWNFALL-OVERFLOW.description": "Overflow effects activate if you have more than [blue]5[/blue] cards in hand.",
+    "SNECKODOWNFALL-OVERFLOW.title": "Overflow",
+    "SNECKODOWNFALL-MUDDLE.description": "Muddling a card changes its cost this turn to between [blue]0[/blue] and [blue]3[/blue] at random.",
+    "SNECKODOWNFALL-MUDDLE.title": "Muddle",
+    "SNECKODOWNFALL-OFFCLASS.description": "An Offclass card is any obtainable card from a class other than your own (including Colorless cards, Curses, and Statuses).",
+    "SNECKODOWNFALL-OFFCLASS.title": "Offclass",
+    "SNECKODOWNFALL-GIFT.description": "When you obtain this card, get a card reward with the following card type.",
+    "SNECKODOWNFALL-GIFT.title": "Gift",
+    "SNECKODOWNFALL-VENOM.description": "Creatures with [gold]Venom[/gold] lose HP when you apply a debuff that isn't [gold]Venom[/gold] to them.",
+    "SNECKODOWNFALL-VENOM.title": "Venom",
+    "SNECKODOWNFALL-LUCKY.description": "Overflow effects always activate this turn regardless of hand size.",
+    "SNECKODOWNFALL-LUCKY.title": "Lucky"
+}

@@ -1,0 +1,18 @@
+{
+  "SNECKODOWNFALL-ACE_OF_WANDS.description": "Whenever you apply a debuff to an enemy, gain {AceOfWandsPower:diff()} [gold]Block[/gold].\n[gold]Gift[/gold]: Debuff.",
+  "SNECKODOWNFALL-ACE_OF_WANDS.title": "Queen of Pentacles",
+  "SNECKODOWNFALL-BLUNDERBUS.description": "Deal {Damage:diff()} damage to ALL enemies.\nRepeat for every 3+ cost card in hand.",
+  "SNECKODOWNFALL-BLUNDERBUS.title": "Blunderbus",
+  "SNECKODOWNFALL-DEFEND_SNECKO.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "SNECKODOWNFALL-DEFEND_SNECKO.title": "Defend",
+  "SNECKODOWNFALL-MOCK_CHARACTER_CHOICE_CARD.description": "{Characters.StringValue:cond:[gold]{Characters}[/gold]|The selected character}'s card will be added to your [gold]Gift[/gold] card pool.",
+  "SNECKODOWNFALL-MOCK_CHARACTER_CHOICE_CARD.title": "Gift",
+  "SNECKODOWNFALL-MOCK_CHARACTER_CHOICE_CARD_SECOND.description": "{Characters.StringValue:cond:[gold]{Characters}[/gold]|The selected character}'s card will be added to your [gold]Gift[/gold] card pool.",
+  "SNECKODOWNFALL-MOCK_CHARACTER_CHOICE_CARD_SECOND.title": "Gift",
+  "SNECKODOWNFALL-SNEK_BITE.description": "Deal {Damage:diff()} damage.\n[gold]Muddle[/gold] {Muddle:diff()} {Muddle:plural:card|cards}.",
+  "SNECKODOWNFALL-SNEK_BITE.title": "Snek Bite",
+  "SNECKODOWNFALL-STRIKE_SNECKO.description": "Deal {Damage:diff()} damage.",
+  "SNECKODOWNFALL-STRIKE_SNECKO.title": "Strike",
+  "SNECKODOWNFALL-TAIL_WHIP.description": "Deal {Damage:diff()} damage.\n[gold]Overflow[/gold]: Apply {WeakPower:diff()} Weak and Vulnerable.",
+  "SNECKODOWNFALL-TAIL_WHIP.title": "Tail Whip"
+}
