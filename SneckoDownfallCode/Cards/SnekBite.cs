@@ -19,7 +19,6 @@ public class SnekBite : SneckoDownfallCard
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         await CommonActions.CardAttack(this, play).Execute(ctx);
-
-        await SneckoActions.Muddle(await CardSelectCmd.FromHand(ctx, Owner, new CardSelectorPrefs(SneckoDownfallCardSelectorPrefs.MuddleSelectionPrompt, DynamicVars["Muddle"].IntValue), c => c.EnergyCost.Canonical >= 0, this));
+        await SneckoActions.MuddleHand(ctx, this);
     }
 }
