@@ -62,4 +62,9 @@ public abstract class SneckoDownfallCard :
     {
         return WithPower<T>(baseVal, 0, hasTooltip);
     }
+
+    protected decimal GetCalculatedValue(string varName, CardPlay play)
+    {
+        return ((CalculatedVar)DynamicVars[varName]).Calculate(play.Target);
+    }
 }
