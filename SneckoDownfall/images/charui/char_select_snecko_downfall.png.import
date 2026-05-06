@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc4j8gmmh2wfa"
-path="res://.godot/imported/character_icon_char_name.png-81de7e215ff7e127d4d948cc2b0f5625.ctex"
+uid="uid://bdb8h78q0a41q"
+path="res://.godot/imported/char_select_snecko_downfall.png-df379ee0621e73dca50e1eb04f8c85d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SneckoDownfall/images/charui/character_icon_char_name.png"
-dest_files=["res://.godot/imported/character_icon_char_name.png-81de7e215ff7e127d4d948cc2b0f5625.ctex"]
+source_file="res://SneckoDownfall/images/charui/char_select_snecko_downfall.png"
+dest_files=["res://.godot/imported/char_select_snecko_downfall.png-df379ee0621e73dca50e1eb04f8c85d7.ctex"]
 
 [params]
 

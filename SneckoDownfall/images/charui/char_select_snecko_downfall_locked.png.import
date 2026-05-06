@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7kkbdbscxo3n"
-path="res://.godot/imported/char_select_char_name_locked.png-7e59a97c3795c4c2022fb15e6d789f9e.ctex"
+path="res://.godot/imported/char_select_snecko_downfall_locked.png-0fbf3b2a94dbe967bcbfdd6cae63db11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SneckoDownfall/images/charui/char_select_char_name_locked.png"
-dest_files=["res://.godot/imported/char_select_char_name_locked.png-7e59a97c3795c4c2022fb15e6d789f9e.ctex"]
+source_file="res://SneckoDownfall/images/charui/char_select_snecko_downfall_locked.png"
+dest_files=["res://.godot/imported/char_select_snecko_downfall_locked.png-0fbf3b2a94dbe967bcbfdd6cae63db11.ctex"]
 
 [params]
 

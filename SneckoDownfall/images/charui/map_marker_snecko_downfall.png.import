@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8y2spescqvpp"
-path="res://.godot/imported/map_marker_char_name.png-bb3966a37d0a91fe7d4dbd6e1cdc82cd.ctex"
+path="res://.godot/imported/map_marker_snecko_downfall.png-004bf7f0dde109212cb2d30f8e9d254e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SneckoDownfall/images/charui/map_marker_char_name.png"
-dest_files=["res://.godot/imported/map_marker_char_name.png-bb3966a37d0a91fe7d4dbd6e1cdc82cd.ctex"]
+source_file="res://SneckoDownfall/images/charui/map_marker_snecko_downfall.png"
+dest_files=["res://.godot/imported/map_marker_snecko_downfall.png-004bf7f0dde109212cb2d30f8e9d254e.ctex"]
 
 [params]
 
