@@ -7,12 +7,14 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using SneckoDownfall.Character;
 using MegaCrit.Sts2.Core.Models;
+using SneckoDownfall.SneckoDownfallCode.Utils;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
 
 [Pool(typeof(SneckoDownfallCardPool))]
-public abstract class SneckoDownfallCard(int cost, CardType type, CardRarity rarity, TargetType target) :
-    ConstructedCardModel(cost, type, rarity, target)
+public abstract class SneckoDownfallCard :
+    ConstructedCardModel
 {
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
@@ -23,6 +25,14 @@ public abstract class SneckoDownfallCard(int cost, CardType type, CardRarity rar
     protected override bool ShouldGlowGoldInternal => HasOverflow && IsOverflowed;
     public bool IsOverflowed => _cachedIsOverflowed ?? PileType.Hand.GetPile(Owner).Cards.Count > 5;
 
+    public SneckoDownfallCard(int cost, CardType type, CardRarity rarity, TargetType target) : base(cost, type, rarity, target)
+    {
+        if(HasOverflow)
+            WithKeyword(SneckoDownfallKeyword.Overflow);
+        if(GiftFilter != null) 
+            WithKeyword(SneckoDownfallKeyword.Gift);
+    }
+
     public void CacheIsOverflowed()
     {
         _cachedIsOverflowed = PileType.Hand.GetPile(Owner).Cards.Count > 5;
@@ -32,7 +42,7 @@ public abstract class SneckoDownfallCard(int cost, CardType type, CardRarity rar
         _cachedIsOverflowed = null;
     }
 
-    public Func<CardModel, bool>? GiftFilter { get; protected set; } = null;
+    public virtual Func<CardModel, bool>? GiftFilter => null;
 
     protected ConstructedCardModel WithMuddle(int baseVal, int upgrade = 0)
     {
@@ -41,10 +51,15 @@ public abstract class SneckoDownfallCard(int cost, CardType type, CardRarity rar
         return this;
     }
 
-    protected ConstructedCardModel WithGift(Func<CardModel, bool> filter)
+    protected ConstructedCardModel WithPower<T>(int baseVal, int upgrade, bool hasTooltip) where T : PowerModel
     {
-        WithKeyword(SneckoDownfallKeyword.Gift);
-        GiftFilter = filter;
+        WithVar(new PowerVar<T>(baseVal).WithUpgrade(upgrade));
+        if (hasTooltip)
+            WithTip(typeof(T));
         return this;
+    }
+    protected ConstructedCardModel WithPower<T>(int baseVal, bool hasTooltip) where T : PowerModel
+    {
+        return WithPower<T>(baseVal, 0, hasTooltip);
     }
 }

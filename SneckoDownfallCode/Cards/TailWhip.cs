@@ -1,10 +1,7 @@
 using BaseLib.Utils;
-using MegaCrit.Sts2.Core.CardSelection;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Powers;
-using SneckoDownfall.Character;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
 
@@ -16,7 +13,6 @@ public class TailWhip : SneckoDownfallCard
         WithDamage(10, 1);
         WithPower<WeakPower>(1, 1);
         WithPower<VulnerablePower>(1, 1);
-        WithKeyword(SneckoDownfallKeyword.Overflow);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
