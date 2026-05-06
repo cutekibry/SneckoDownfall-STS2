@@ -17,6 +17,8 @@
   "SNECKODOWNFALL-CHEAP_STOCK.title": "Cheap Stock",
   "SNECKODOWNFALL-COBRA_COIL.description": "Deal {Damage:diff()} damage.\nEnemy takes {ConstrictedPower:diff()} damage at the end of each of its turns.\n[gold]Gift[/gold]: Rare Attack.",
   "SNECKODOWNFALL-COBRA_COIL.title": "Cobra Coil",
+  "SNECKODOWNFALL-COMBO_STRING.description": "Deal {Damage:diff()} damage for each [gold]Offclass[/gold] card played this turn.\n[gold]Gift[/gold]: Uncommon.{InCombat:\n(Hit {Hits:diff()} times)|}",
+  "SNECKODOWNFALL-COMBO_STRING.title": "Combo String",
   "SNECKODOWNFALL-DEFEND_SNECKO.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SNECKODOWNFALL-DEFEND_SNECKO.title": "Defend",
   "SNECKODOWNFALL-MOCK_CHARACTER_CHOICE_CARD.description": "{Characters.StringValue:cond:[gold]{Characters}[/gold]|The selected character}'s card will be added to your [gold]Gift[/gold] card pool.",
