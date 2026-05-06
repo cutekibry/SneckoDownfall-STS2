@@ -15,7 +15,7 @@ public class Belittle : SneckoDownfallCard
     public override Func<CardModel, bool>? GiftFilter => c => GiftSelector.IsDebuff(c) && c.Rarity == CardRarity.Uncommon;
     public Belittle() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithCalculatedVar("HpLoss", 0, 9, GetDebuffCount);
+        WithCalculatedVar("HpLoss", 0, 9, GetDebuffCount, 0, 3);
     }
     private static decimal GetDebuffCount(CardModel _, Creature? target)
     {
