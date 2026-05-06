@@ -1,10 +1,10 @@
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Cards;
 using SneckoDownfall.SneckoDownfallCode.CardSelectorPref;
+using SneckoDownfall.SneckoDownfallCode.Extensions;
 
 namespace SneckoDownfall.SneckoDownfallCode.Actions;
 
@@ -12,7 +12,7 @@ public static class SneckoActions
 {
     public static Task Muddle(CardModel card)
     {
-        if (card.EnergyCost.Canonical < 0)
+        if (card.EnergyCost.Canonical < 0 || card.EnergyCost.CostsX)
             return Task.CompletedTask;
         int cost = card.Owner.RunState.Rng.CombatEnergyCosts.NextInt(4);
         card.EnergyCost.SetThisTurn(cost);
@@ -21,7 +21,7 @@ public static class SneckoActions
     }
     public static async Task MuddleHand(PlayerChoiceContext ctx, CardModel card, int amount)
     {
-        var cards = await CardSelectCmd.FromHand(ctx, card.Owner, new CardSelectorPrefs(SneckoDownfallCardSelectorPrefs.MuddleSelectionPrompt, amount), c => c.EnergyCost.Canonical >= 0, card);
+        var cards = await CardSelectCmd.FromHand(ctx, card.Owner, new CardSelectorPrefs(SneckoDownfallCardSelectorPrefs.MuddleSelectionPrompt, amount), c => c.CanBeMuddled(), card);
         await Muddle(cards);
     }
     public static async Task MuddleHand(PlayerChoiceContext ctx, CardModel card)
