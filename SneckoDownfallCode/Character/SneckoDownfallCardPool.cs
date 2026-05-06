@@ -17,8 +17,8 @@ public class SneckoDownfallCardPool : CustomCardPoolModel
     so it may take some experimentation to find a color you like.
     Generally they should be values between 0 and 1. */
     public override float H => 0.55f; //Hue; changes the color.
-    public override float S => 0.5f; //Saturation
-    public override float V => 1.4f; //Brightness
+    public override float S => 0.3f; //Saturation
+    public override float V => 1.6f; //Brightness
     
     //Alternatively, leave these values at 1 and provide a custom frame image.
     /*public override Texture2D CustomFrame(CustomCardModel card)
