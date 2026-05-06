@@ -13,8 +13,9 @@ public class BlunderGuard : SneckoDownfallCard
 {
     public BlunderGuard() : base(0, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
-        WithPower<BlunderGuardBlockPower>(6, 8, false);
-        WithPower<BlunderGuardStrengthPower>(2, 3, false);
+        WithPower<BlunderGuardBlockPower>(6, 2, false);
+        WithPower<BlunderGuardStrengthPower>(2, 1, false);
+        WithEnergy(3);
         WithTip(typeof(StrengthPower));
         WithTip(StaticHoverTip.Block);
     }

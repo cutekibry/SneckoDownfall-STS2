@@ -1,5 +1,5 @@
 {
-    "SNECKODOWNFALL-SNECKO_SOUL.description": "At the start of each combat, add [gold]Soul Roll[/gold] to your hand.{Characters.StringValue:cond:\n\nYour [gold]Gift[/gold] cards will come from the following characters:\n{}|}",
+    "SNECKODOWNFALL-SNECKO_SOUL.description": "At the start of each combat, add a [gold]Soul Roll[/gold] to your [gold]Hand[/gold].{Characters.StringValue:cond:\n\nYour [gold]Gift[/gold] cards will come from the pools of the following characters:\n{}|}",
     "SNECKODOWNFALL-SNECKO_SOUL.flavor": "0...3...2...2...1",
-    "SNECKODOWNFALL-SNECKO_SOUL.title": "SneckoSoul"
+    "SNECKODOWNFALL-SNECKO_SOUL.title": "Snecko Soul"
 }

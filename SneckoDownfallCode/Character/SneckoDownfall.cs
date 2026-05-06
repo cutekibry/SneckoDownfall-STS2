@@ -48,7 +48,7 @@ public class SneckoDownfall : PlaceholderCharacterModel
     public override CardPoolModel CardPool => ModelDb.CardPool<SneckoDownfallCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<SneckoDownfallRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<SneckoDownfallPotionPool>();
-    
+
     /*  PlaceholderCharacterModel will utilize placeholder basegame assets for most of your character assets until you
         override all the other methods that define those assets. 
         These are just some of the simplest assets, given some placeholders to differentiate your character with. 
@@ -62,8 +62,11 @@ public class SneckoDownfall : PlaceholderCharacterModel
             return icon;
         }
     }
-    public override string CustomIconTexturePath => "character_icon_char_name.png".CharacterUiPath();
-    public override string CustomCharacterSelectIconPath => "char_select_char_name.png".CharacterUiPath();
-    public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
-    public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
+
+    public override string CustomCharacterSelectBg => "res://SneckoDownfall/scenes/screens/char_select/char_select_bg_snecko_downfall.tscn";
+
+    public override string CustomIconTexturePath => "character_icon_snecko_downfall.png".CharacterUiPath();
+    public override string CustomCharacterSelectIconPath => "char_select_snecko_downfall.png".CharacterUiPath();
+    public override string CustomCharacterSelectLockedIconPath => "char_select_snecko_downfall_locked.png".CharacterUiPath();
+    public override string CustomMapMarkerPath => "map_marker_snecko_downfall.png".CharacterUiPath();
 }
