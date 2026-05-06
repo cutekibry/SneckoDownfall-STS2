@@ -1,5 +1,11 @@
 {
     "SNECKODOWNFALL-ACE_OF_WANDS_POWER.description": "Whenever you apply a debuff to an enemy, gain [gold]Block[gold].",
     "SNECKODOWNFALL-ACE_OF_WANDS_POWER.smartDescription": "Whenever you apply a debuff to an enemy, gain [blue]{Amount}/[blue] [gold]Block[gold].",
-    "SNECKODOWNFALL-ACE_OF_WANDS_POWER.title": "Queen of Pentacles"
+    "SNECKODOWNFALL-ACE_OF_WANDS_POWER.title": "Queen of Pentacles",
+    "SNECKODOWNFALL-BLUNDER_GUARD_BLOCK_POWER.description": "Whenever you play a card that costs {Energy:energyIcons()} or more, gain [gold]Block[/gold].",
+    "SNECKODOWNFALL-BLUNDER_GUARD_BLOCK_POWER.smartDescription": "Whenever you play a card that costs {Energy:energyIcons()} or more, gain [blue]{Amount}[/blue] [gold]Block[/gold].",
+    "SNECKODOWNFALL-BLUNDER_GUARD_BLOCK_POWER.title": "Blunder Guard Block",
+    "SNECKODOWNFALL-BLUNDER_GUARD_STRENGTH_POWER.description": "Whenever you play a card that costs {Energy:energyIcons()} or more, gain [gold]Strength[/gold].",
+    "SNECKODOWNFALL-BLUNDER_GUARD_STRENGTH_POWER.smartDescription": "Whenever you play a card that costs {Energy:energyIcons()} or more, gain [blue]{Amount}[/blue] [gold]Strength[/gold].",
+    "SNECKODOWNFALL-BLUNDER_GUARD_STRENGTH_POWER.title": "Blunder Guard Strength"
 }

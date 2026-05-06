@@ -1,8 +1,18 @@
 {
   "SNECKODOWNFALL-ACE_OF_WANDS.description": "Whenever you apply a debuff to an enemy, gain {AceOfWandsPower:diff()} [gold]Block[/gold].\n[gold]Gift[/gold]: Debuff.",
   "SNECKODOWNFALL-ACE_OF_WANDS.title": "Queen of Pentacles",
-  "SNECKODOWNFALL-BLUNDERBUS.description": "Deal {Damage:diff()} damage to ALL enemies.\nRepeat for every 3+ cost card in hand.",
+  "SNECKODOWNFALL-AMASS.description": "Gain {CalculatedBlock:diff()} [gold]Block[/gold].\nGain additional [gold]Block[/gold] equal to {IfUpgraded:show:twice the|the} total {energyPrefix:energyIcons(1)} cost of your hand.",
+  "SNECKODOWNFALL-AMASS.title": "Amass",
+  "SNECKODOWNFALL-BEHOLD.description": "Deal {Damage:diff()} damage.\n[gold]Overflow[/gold]: Add {Shivs:diff()} [gold]Shivs[/gold] into your hand.",
+  "SNECKODOWNFALL-BEHOLD.title": "Behold",
+  "SNECKODOWNFALL-BELITTLE.description": "Enemy loses {InCombat:{HpLoss:diff()}|{HpLossExtra:diff()}} HP for each unique debuff they have.\n[gold]Gift[/gold]: Uncommon Debuff.",
+  "SNECKODOWNFALL-BELITTLE.title": "Belittle",
+  "SNECKODOWNFALL-BEYOND_ARMOR.description": "Gain {Block:diff()} [gold]Block[/gold].\nPut {Cards:diff()} random [gold]Offclass[/gold] cards from your draw pile into your hand.\n[gold]Gift[/gold]: Common.",
+  "SNECKODOWNFALL-BEYOND_ARMOR.title": "Beyond Armor",
+  "SNECKODOWNFALL-BLUNDERBUS.description": "Deal {Damage:diff()} damage to ALL enemies.\nRepeat for every 3+ cost card in your hand.{InCombat:\n(Repeat {Hits:diff()} additional times)|}",
   "SNECKODOWNFALL-BLUNDERBUS.title": "Blunderbus",
+  "SNECKODOWNFALL-BLUNDER_GUARD.description": "Whenever you play a card that costs {Energy:energyIcons()} or more, gain {BlunderGuardBlockPower:diff()} [gold]Block[/gold] and {BlunderGuardStrengthPower:diff()} [gold]Strength[/gold].",
+  "SNECKODOWNFALL-BLUNDER_GUARD.title": "Blunder Guard",
   "SNECKODOWNFALL-DEFEND_SNECKO.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SNECKODOWNFALL-DEFEND_SNECKO.title": "Defend",
   "SNECKODOWNFALL-MOCK_CHARACTER_CHOICE_CARD.description": "{Characters.StringValue:cond:[gold]{Characters}[/gold]|The selected character}'s card will be added to your [gold]Gift[/gold] card pool.",
@@ -13,6 +23,8 @@
   "SNECKODOWNFALL-SNEK_BITE.title": "Snek Bite",
   "SNECKODOWNFALL-STRIKE_SNECKO.description": "Deal {Damage:diff()} damage.",
   "SNECKODOWNFALL-STRIKE_SNECKO.title": "Strike",
+  "SNECKODOWNFALL-SOUL_ROLL.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Muddle[/gold] a card.",
+  "SNECKODOWNFALL-SOUL_ROLL.title": "Soul Roll",
   "SNECKODOWNFALL-TAIL_WHIP.description": "Deal {Damage:diff()} damage.\n[gold]Overflow[/gold]: Apply {WeakPower:diff()} Weak and Vulnerable.",
   "SNECKODOWNFALL-TAIL_WHIP.title": "Tail Whip"
 }
