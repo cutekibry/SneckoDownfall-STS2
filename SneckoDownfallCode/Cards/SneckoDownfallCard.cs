@@ -21,11 +21,11 @@ public abstract class SneckoDownfallCard(int cost, CardType type, CardRarity rar
     protected virtual bool HasOverflow => false;
     private bool? _cachedIsOverflowed = null;
     protected override bool ShouldGlowGoldInternal => HasOverflow && IsOverflowed;
-    public bool IsOverflowed => _cachedIsOverflowed ?? PileType.Hand.GetPile(Owner).Cards.Count >= 5;
+    public bool IsOverflowed => _cachedIsOverflowed ?? PileType.Hand.GetPile(Owner).Cards.Count > 5;
 
     public void CacheIsOverflowed()
     {
-        _cachedIsOverflowed = PileType.Hand.GetPile(Owner).Cards.Count >= 5;
+        _cachedIsOverflowed = PileType.Hand.GetPile(Owner).Cards.Count > 5;
     }
     public void ClearIsOverflowedCache()
     {
