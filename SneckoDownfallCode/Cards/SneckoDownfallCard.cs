@@ -53,7 +53,7 @@ public abstract class SneckoDownfallCard :
 
     protected ConstructedCardModel WithPower<T>(int baseVal, int upgrade, bool hasTooltip) where T : PowerModel
     {
-        WithVar(new PowerVar<T>(baseVal).WithUpgrade(upgrade));
+        WithVar(new DynamicVar(typeof(T).Name, baseVal).WithUpgrade(upgrade));
         if (hasTooltip)
             WithTip(typeof(T));
         return this;
