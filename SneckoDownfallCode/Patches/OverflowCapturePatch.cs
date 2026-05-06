@@ -17,4 +17,28 @@ public static class OverflowCapturePatch
             sneckoCard.CacheIsOverflowed();
         }
     }
+
+    [HarmonyPostfix]
+    public static void Postfix(CardModel __instance, ref Task __result)
+    {
+        if (__instance is SneckoDownfallCard)
+        {
+            __result = ClearOverflowCaptureAfterPlay(__instance, __result);
+        }
+    }
+
+    private static async Task ClearOverflowCaptureAfterPlay(CardModel card, Task original)
+    {
+        try
+        {
+            await original;
+        }
+        finally
+        {
+            if (card is SneckoDownfallCard sneckoCard)
+            {
+                sneckoCard.ClearIsOverflowedCache();
+            }
+        }
+    }
 }
