@@ -23,7 +23,7 @@ public class BeyondArmor : SneckoDownfallCard
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         await CommonActions.CardBlock(this, play); 
-        var cards = PileType.Hand.GetPile(Owner).Cards.Where(c => c.IsOffclass()).ToList().StableShuffle(Owner.RunState.Rng.Shuffle);
+        var cards = PileType.Draw.GetPile(Owner).Cards.Where(c => c.IsOffclass()).ToList().StableShuffle(Owner.RunState.Rng.Shuffle).Take(DynamicVars.Cards.IntValue);
         await CardPileCmd.Add(cards, PileType.Hand);
     }
 }
