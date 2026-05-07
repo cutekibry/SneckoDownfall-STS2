@@ -7,8 +7,6 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using SneckoDownfall.Character;
 using MegaCrit.Sts2.Core.Models;
-using SneckoDownfall.SneckoDownfallCode.Utils;
-using MegaCrit.Sts2.Core.HoverTips;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
 
@@ -27,9 +25,9 @@ public abstract class SneckoDownfallCard :
 
     public SneckoDownfallCard(int cost, CardType type, CardRarity rarity, TargetType target) : base(cost, type, rarity, target)
     {
-        if(HasOverflow)
+        if (HasOverflow)
             WithKeyword(SneckoDownfallKeyword.Overflow);
-        if(GiftFilter != null) 
+        if (GiftFilter != null)
             WithKeyword(SneckoDownfallKeyword.Gift);
     }
 
