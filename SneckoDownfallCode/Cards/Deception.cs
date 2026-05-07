@@ -9,7 +9,7 @@ namespace SneckoDownfall.SneckoDownfallCode.Cards;
 // Reference: STS1 Deception; STS2 Shockwave plus Begone/CardPileCmd for generated-card creation.
 public class Deception : SneckoDownfallCard
 {
-    public Deception() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public Deception() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         WithBlock(11, 4);
         WithKeyword(CardKeyword.Exhaust);
