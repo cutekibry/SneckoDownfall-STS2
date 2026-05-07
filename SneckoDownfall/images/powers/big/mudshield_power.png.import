@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct1uf1ju5yej8"
-path="res://.godot/imported/power.png-623b2f2019ba1329939720a5428578ef.ctex"
+uid="uid://dcbpqgjyaxe32"
+path="res://.godot/imported/mudshield_power.png-e13ee91b4966e497138d625389349d84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SneckoDownfall/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-623b2f2019ba1329939720a5428578ef.ctex"]
+source_file="res://SneckoDownfall/images/powers/big/mudshield_power.png"
+dest_files=["res://.godot/imported/mudshield_power.png-e13ee91b4966e497138d625389349d84.ctex"]
 
 [params]
 
