@@ -17,7 +17,7 @@ public class GildedShield : SneckoDownfallCard
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         await CommonActions.CardBlock(this, play);
-        await SneckoActions.Muddle(this);
+        await SneckoActions.Muddle(ctx, this);
     }
 
     protected override PileType GetResultPileType()
