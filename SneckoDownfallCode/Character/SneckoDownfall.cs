@@ -66,6 +66,7 @@ public class SneckoDownfall : PlaceholderCharacterModel
     public override string CustomCharacterSelectBg => "res://SneckoDownfall/scenes/screens/char_select/char_select_bg_snecko_downfall.tscn";
 
     public override string CustomIconTexturePath => "character_icon_snecko_downfall.png".CharacterUiPath();
+    public override string CustomIconOutlineTexturePath => "character_icon_snecko_downfall_outline.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_snecko_downfall.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_snecko_downfall_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_snecko_downfall.png".CharacterUiPath();
