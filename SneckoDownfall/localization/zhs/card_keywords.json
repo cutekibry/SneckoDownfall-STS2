@@ -6,9 +6,5 @@
     "SNECKODOWNFALL-OFFCLASS.description": "除异蛇卡牌之外的所有可获得的卡牌（包括[gold]无色牌[/gold]，[gold]诅咒牌[/gold]和[gold]状态牌[/gold]）。",
     "SNECKODOWNFALL-OFFCLASS.title": "异色",
     "SNECKODOWNFALL-GIFT.description": "当你将这张牌加入卡组时，可获得一次指定类型的卡牌奖励。",
-    "SNECKODOWNFALL-GIFT.title": "赠礼",
-    "SNECKODOWNFALL-VENOM.description": "当你给予一个拥有[gold]剧毒[/gold]的生物非[gold]剧毒[/gold]的负面效果时，该生物会失去生命。",
-    "SNECKODOWNFALL-VENOM.title": "剧毒",
-    "SNECKODOWNFALL-LUCKY.description": "本回合无视[gold]手牌[/gold]数量，始终触发[gold]溢出[/gold]效果。",
-    "SNECKODOWNFALL-LUCKY.title": "幸运"
+    "SNECKODOWNFALL-GIFT.title": "赠礼"
 }

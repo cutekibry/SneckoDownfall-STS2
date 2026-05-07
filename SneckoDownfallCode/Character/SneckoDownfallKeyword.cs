@@ -20,12 +20,4 @@ public static class SneckoDownfallKeyword
     [CustomEnum]
     [KeywordProperties(AutoKeywordPosition.None)]
     public static CardKeyword Gift;
-
-    [CustomEnum]
-    [KeywordProperties(AutoKeywordPosition.None)]
-    public static CardKeyword Venom;
-
-    [CustomEnum]
-    [KeywordProperties(AutoKeywordPosition.None)]
-    public static CardKeyword Lucky;
 }
