@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using SneckoDownfall.Character;
 using SneckoDownfall.SneckoDownfallCode.Character;
+using SneckoDownfall.SneckoDownfallCode.Extensions;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
 
@@ -24,7 +25,7 @@ public class ComboString : SneckoDownfallCard
     }
     private static decimal GetHits(CardModel card, Creature? _)
     {
-        return CombatManager.Instance.History.Entries.OfType<CardPlayFinishedEntry>().Count(e => e.CardPlay.Card.Pool is not SneckoDownfallCardPool && e.Actor == card.Owner.Creature && e.HappenedThisTurn(card.CombatState));
+        return CombatManager.Instance.History.Entries.OfType<CardPlayFinishedEntry>().Count(e => e.CardPlay.Card.IsOffclass() && e.Actor == card.Owner.Creature && e.HappenedThisTurn(card.CombatState));
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)

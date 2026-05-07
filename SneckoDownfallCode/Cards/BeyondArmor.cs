@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using SneckoDownfall.Character;
+using SneckoDownfall.SneckoDownfallCode.Extensions;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
 
@@ -22,7 +23,7 @@ public class BeyondArmor : SneckoDownfallCard
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         await CommonActions.CardBlock(this, play); 
-        var cards = PileType.Hand.GetPile(Owner).Cards.Where(c => c.Pool != Owner.Character.CardPool).ToList().StableShuffle(Owner.RunState.Rng.Shuffle);
+        var cards = PileType.Hand.GetPile(Owner).Cards.Where(c => c.IsOffclass()).ToList().StableShuffle(Owner.RunState.Rng.Shuffle);
         await CardPileCmd.Add(cards, PileType.Hand);
     }
 }
