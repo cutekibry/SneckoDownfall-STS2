@@ -24,6 +24,6 @@ public class Belittle : SneckoDownfallCard
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
-        await CreatureCmd.Damage(ctx, play.Target!, DynamicVars["HpLoss"].IntValue, ValueProp.Unblockable | ValueProp.Unpowered, this);
+        await CreatureCmd.Damage(ctx, play.Target!, GetCalculatedValue("HpLoss", play), ValueProp.Unblockable | ValueProp.Unpowered, this);
     }
 }
