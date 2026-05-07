@@ -13,5 +13,11 @@
     "SNECKODOWNFALL-CHEAP_STOCK_POWER.title": "Cheap Stock",
     "SNECKODOWNFALL-CONSTRICTED_POWER.description": "At the end of its turn, take damage.",
     "SNECKODOWNFALL-CONSTRICTED_POWER.smartDescription": "At the end of its turn, take [blue]{Amount}[/blue] damage.",
-    "SNECKODOWNFALL-CONSTRICTED_POWER.title": "Constricted"
+    "SNECKODOWNFALL-CONSTRICTED_POWER.title": "Constricted",
+    "SNECKODOWNFALL-MUDSHIELD_POWER.description": "Whenever you [gold]Muddle[/gold] a card, gain [gold]Block[/gold].",
+    "SNECKODOWNFALL-MUDSHIELD_POWER.smartDescription": "Whenever you [gold]Muddle[/gold] a card, gain [blue]{Amount}[/blue] [gold]Block[/gold].",
+    "SNECKODOWNFALL-MUDSHIELD_POWER.title": "Mud Shield",
+    "SNECKODOWNFALL-VENOM_POWER.description": "Whenever you apply a debuff that isn't [gold]Venom[/gold] to this enemy, it loses HP.",
+    "SNECKODOWNFALL-VENOM_POWER.smartDescription": "Whenever you apply a debuff that isn't [gold]Venom[/gold] to this enemy, it loses [blue]{Amount}[/blue] HP.",
+    "SNECKODOWNFALL-VENOM_POWER.title": "Venom"
 }

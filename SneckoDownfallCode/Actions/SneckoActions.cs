@@ -19,7 +19,7 @@ public static class SneckoActions
         }
 
         var cost = card.Owner.RunState.Rng.CombatEnergyCosts.NextInt(
-            cheaperOnly ? card.EnergyCost.GetResolved() + 1 : 4
+            cheaperOnly ? Math.Max(card.EnergyCost.GetResolved(), 1) : 4
         );
         card.EnergyCost.SetThisTurn(cost);
         NCard.FindOnTable(card)?.PlayRandomizeCostAnim();

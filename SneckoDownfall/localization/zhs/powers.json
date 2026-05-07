@@ -13,5 +13,11 @@
     "SNECKODOWNFALL-CHEAP_STOCK_POWER.title": "廉价存货",
     "SNECKODOWNFALL-CONSTRICTED_POWER.description": "在它的回合结束时，受到伤害。",
     "SNECKODOWNFALL-CONSTRICTED_POWER.smartDescription": "在它的回合结束时，受到[blue]{Amount}[/blue]点伤害。",
-    "SNECKODOWNFALL-CONSTRICTED_POWER.title": "紧缠"
+    "SNECKODOWNFALL-CONSTRICTED_POWER.title": "紧缠",
+    "SNECKODOWNFALL-MUDSHIELD_POWER.description": "每当你[gold]混淆[/gold]一张牌时，获得[gold]格挡[/gold]。",
+    "SNECKODOWNFALL-MUDSHIELD_POWER.smartDescription": "每当你[gold]混淆[/gold]一张牌时，获得[blue]{Amount}[/blue]点[gold]格挡[/gold]。",
+    "SNECKODOWNFALL-MUDSHIELD_POWER.title": "泥浆屏障",
+    "SNECKODOWNFALL-VENOM_POWER.description": "每当你给予该敌人[gold]剧毒[/gold]以外的负面状态时，使其失去生命。",
+    "SNECKODOWNFALL-VENOM_POWER.smartDescription": "每当你给予该敌人[gold]剧毒[/gold]以外的负面状态时，使其失去[blue]{Amount}[/blue]点生命。",
+    "SNECKODOWNFALL-VENOM_POWER.title": "剧毒"
 }
