@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clhsf5xu0cbyc"
-path="res://.godot/imported/relic.png-7e5eecb5b3d13374f65571537fa58221.ctex"
+uid="uid://vlw77u6k81lg"
+path="res://.godot/imported/blank_card_outline.png-a863afcf93fb4e6b84cfbb69b3be63a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SneckoDownfall/images/relics/relic.png"
-dest_files=["res://.godot/imported/relic.png-7e5eecb5b3d13374f65571537fa58221.ctex"]
+source_file="res://SneckoDownfall/images/relics/blank_card_outline.png"
+dest_files=["res://.godot/imported/blank_card_outline.png-a863afcf93fb4e6b84cfbb69b3be63a4.ctex"]
 
 [params]
 

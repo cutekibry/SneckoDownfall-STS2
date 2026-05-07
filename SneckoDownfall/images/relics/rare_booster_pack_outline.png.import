@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvgqh2ekol6n4"
-path="res://.godot/imported/relic_outline.png-7624f25bff90a8fc2274e8019e59bebb.ctex"
+uid="uid://bp0kkvy1q6myi"
+path="res://.godot/imported/rare_booster_pack_outline.png-977b7239b08e04de80e17e2d93c7dcb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SneckoDownfall/images/relics/relic_outline.png"
-dest_files=["res://.godot/imported/relic_outline.png-7624f25bff90a8fc2274e8019e59bebb.ctex"]
+source_file="res://SneckoDownfall/images/relics/rare_booster_pack_outline.png"
+dest_files=["res://.godot/imported/rare_booster_pack_outline.png-977b7239b08e04de80e17e2d93c7dcb6.ctex"]
 
 [params]
 
