@@ -33,7 +33,7 @@ public class SneckoSoul : SneckoDownfallRelic
             AssertMutable();
             _characterIds.Clear();
             _characterIds.AddRange(value);
-            ((StringVar)DynamicVars["Characters"]).StringValue = string.Join("\n", Characters.Select(c => c.Title.GetFormattedText()));
+            ((StringVar)DynamicVars["Characters"]).StringValue = string.Join(", ", Characters.Select(c => $"[gold]{c.Title.GetFormattedText()}[/gold]"));
         }
     }
 
@@ -115,7 +115,15 @@ public class SneckoSoul : SneckoDownfallRelic
         CardPile? pile = card.Pile;
         if (pile != null && pile.Type == PileType.Deck && card is SneckoDownfallCard sneckoCard && sneckoCard.GiftFilter != null)
         {
-            await GiftSelector.GetGiftReward(Owner, sneckoCard.GiftFilter);
+            if (sneckoCard is GlitteringGambit)
+            {
+                await PlayerCmd.GainGold(sneckoCard.DynamicVars["Gold"].BaseValue, Owner);
+                await GiftSelector.OfferGiftReward(Owner, sneckoCard.GiftFilter, true);
+            }
+            else
+            {
+                await GiftSelector.OfferGiftReward(Owner, sneckoCard.GiftFilter);
+            }
         }
     }
 

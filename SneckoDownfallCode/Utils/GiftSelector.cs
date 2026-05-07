@@ -1,13 +1,10 @@
 
-using System.Diagnostics;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
-using MegaCrit.Sts2.Core.Factories;
-using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
+using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Runs;
 using SneckoDownfall.SneckoDownfallCode.Character;
 using SneckoDownfall.SneckoDownfallCode.Relics;
@@ -33,18 +30,31 @@ public static class GiftSelector
         return cards.Where(filter);
     }
 
-    public static async Task GetGiftReward(Player player, Func<CardModel, bool> filter)
+    public static async Task OfferGiftReward(Player player, Func<CardModel, bool> filter, bool upgraded = false)
     {
         var candidateCards = GetGiftCards(player, filter);
+        var isRarityAllTheSame = candidateCards.Select(c => c.Rarity).Distinct().Count() <= 1;
 
-        var IsRarityAllTheSame = candidateCards.Select(c => c.Rarity).Distinct().Count() <= 1;
+        var options = new CardCreationOptions(candidateCards, CardCreationSource.Other, isRarityAllTheSame ? CardRarityOddsType.Uniform : CardRarityOddsType.RegularEncounter);
+        Reward reward = upgraded
+            ? new UpgradedCardReward(options, 3, player)
+            : new CardReward(options, 3, player);
 
-        var options = new CardCreationOptions(candidateCards, CardCreationSource.Other, IsRarityAllTheSame ? CardRarityOddsType.Uniform : CardRarityOddsType.RegularEncounter);
-        var options2 = (from r in CardFactory.CreateForReward(player, 3, options)
-                                    select r.Card).ToList();
-        var chosenCard = await CardSelectCmd.FromChooseACardScreen(new BlockingPlayerChoiceContext(), options2, player, canSkip: true);
-        if (chosenCard != null)
-            CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(chosenCard, PileType.Deck));
+        await RewardsCmd.OfferCustom(player, [reward]);
+    }
+
+    private sealed class UpgradedCardReward : CardReward
+    {
+        public UpgradedCardReward(CardCreationOptions options, int cardCount, Player player)
+            : base(options.WithFlags(CardCreationFlags.NoUpgradeRoll), cardCount, player)
+        {
+            AfterGenerated += UpgradeGeneratedCards;
+        }
+
+        private void UpgradeGeneratedCards()
+        {
+            CardCmd.Upgrade(Cards, CardPreviewStyle.None);
+        }
     }
 
     public static bool IsDebuff(CardModel card)
