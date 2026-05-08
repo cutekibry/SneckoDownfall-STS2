@@ -1,6 +1,7 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models.Cards;
 using SneckoDownfall.SneckoDownfallCode.Actions;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
@@ -19,10 +20,14 @@ public class GildedShield : SneckoDownfallCard
         await CommonActions.CardBlock(this, play);
         await SneckoActions.Muddle(ctx, this);
     }
-
-    protected override PileType GetResultPileType()
+    protected override PileType GetResultPileTypeForCardPlay()
     {
-        var resultPileType = base.GetResultPileType();
-        return resultPileType == PileType.Discard ? PileType.Hand : resultPileType;
+        PileType resultPileTypeForCardPlay = base.GetResultPileTypeForCardPlay();
+        if (resultPileTypeForCardPlay != PileType.Discard)
+        {
+            return resultPileTypeForCardPlay;
+        }
+
+        return PileType.Hand;
     }
 }

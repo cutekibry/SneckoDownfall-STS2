@@ -10,6 +10,15 @@ public static class StringExtensions
         return Path.Join(MainFile.ResPath, "images", path);
     }
 
+    public static string EnchantmentImagePath(this string path)
+    {
+        path = Path.Join(MainFile.ResPath, "images", "enchantments", path);
+        if (ResourceLoader.Exists(path)) return path;
+        
+        MainFile.Logger.Info("Could not find enchantment image path: " + path);
+        return Path.Join(MainFile.ResPath, "images", "enchantments", "enchantment.png");
+    }
+
     public static string CardImagePath(this string path)
     {
         path = Path.Join(MainFile.ResPath, "images", "card_portraits", path);

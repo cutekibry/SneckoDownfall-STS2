@@ -28,7 +28,7 @@
   "SNECKODOWNFALL-CRYSTAL_BOOMERANG.title": "Crystal Boomerang",
   "SNECKODOWNFALL-DANGER_NOODLE.description": "Deal {Damage:diff()} damage.\n[gold]Muddle[/gold] a card.{InCombat:|\n[gold]Gift[/gold]: Card that cost {Energy:energyIcons()} or more.}",
   "SNECKODOWNFALL-DANGER_NOODLE.title": "Danger Noodle",
-  "SNECKODOWNFALL-DECEPTION.description": "Gain {Block:diff()} [gold]Block[/gold].\nAdd a [gold]Shockwave[/gold] to your [gold]Hand[/gold].",
+  "SNECKODOWNFALL-DECEPTION.description": "Gain {Block:diff()} [gold]Block[/gold].\nAdd a [purple]Fake[/purple] ([gold]Ironclad[/gold]) [gold]Shockwave[/gold] to your [gold]Hand[/gold].",
   "SNECKODOWNFALL-DECEPTION.title": "Deception",
   "SNECKODOWNFALL-DEFEND_SNECKO.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SNECKODOWNFALL-DEFEND_SNECKO.title": "Defend",

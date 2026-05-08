@@ -6,7 +6,6 @@ using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using SneckoDownfall.SneckoDownfallCode.Cards;
 using SneckoDownfall.SneckoDownfallCode.Relics;
-using MegaCrit.Sts2.Core.Models.Relics;
 
 namespace SneckoDownfall.SneckoDownfallCode.Character;
 

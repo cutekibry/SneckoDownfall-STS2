@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using SneckoDownfall.Character;
 using MegaCrit.Sts2.Core.Models;
+using HarmonyLib;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
 
@@ -64,5 +65,39 @@ public abstract class SneckoDownfallCard :
     protected decimal GetCalculatedValue(string varName, CardPlay play)
     {
         return ((CalculatedVar)DynamicVars[varName]).Calculate(play.Target);
+    }
+
+
+    [HarmonyPatch(typeof(CardModel), nameof(OnPlayWrapper))]
+    public static class OverflowCapturePatch
+    {
+        [HarmonyPrefix]
+        public static void Prefix(CardModel __instance)
+        {
+            if (__instance is SneckoDownfallCard sneckoCard)
+                sneckoCard.CacheIsOverflowed();
+        }
+
+        [HarmonyPostfix]
+        public static void Postfix(CardModel __instance, ref Task __result)
+        {
+            if (__instance is SneckoDownfallCard)
+                __result = ClearOverflowCaptureAfterPlay(__instance, __result);
+        }
+
+        private static async Task ClearOverflowCaptureAfterPlay(CardModel card, Task original)
+        {
+            try
+            {
+                await original;
+            }
+            finally
+            {
+                if (card is SneckoDownfallCard sneckoCard)
+                {
+                    sneckoCard.ClearIsOverflowedCache();
+                }
+            }
+        }
     }
 }
