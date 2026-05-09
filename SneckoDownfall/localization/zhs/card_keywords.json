@@ -1,10 +1,10 @@
 {
-    "SNECKODOWNFALL-OVERFLOW.description": "当你的[gold]手牌[/gold]数量超过[blue]5[/blue]张时，可以触发[gold]溢出[/gold]效果。",
-    "SNECKODOWNFALL-OVERFLOW.title": "溢出",
-    "SNECKODOWNFALL-MUDDLE.description": "本回合耗能变为[blue]0[/blue]到[blue]3[/blue]之间的随机值。",
-    "SNECKODOWNFALL-MUDDLE.title": "混淆",
-    "SNECKODOWNFALL-OFFCLASS.description": "除异蛇卡牌之外的所有可获得的卡牌（包括[gold]无色牌[/gold]，[gold]诅咒牌[/gold]和[gold]状态牌[/gold]）。",
-    "SNECKODOWNFALL-OFFCLASS.title": "异色",
-    "SNECKODOWNFALL-GIFT.description": "当你将这张牌加入卡组时，可获得一次指定类型的卡牌奖励。",
-    "SNECKODOWNFALL-GIFT.title": "赠礼"
+  "SNECKODOWNFALL-GIFT.description": "当你将这张牌加入卡组时，可获得一次指定类型的卡牌奖励。",
+  "SNECKODOWNFALL-GIFT.title": "赠礼",
+  "SNECKODOWNFALL-MUDDLE.description": "本回合耗能变为[blue]0[/blue]到[blue]3[/blue]之间的随机值。",
+  "SNECKODOWNFALL-MUDDLE.title": "混淆",
+  "SNECKODOWNFALL-OFFCLASS.description": "除异蛇卡牌之外的所有可获得的卡牌（包括[gold]无色牌[/gold]，[gold]诅咒牌[/gold]和[gold]状态牌[/gold]）。",
+  "SNECKODOWNFALL-OFFCLASS.title": "异色",
+  "SNECKODOWNFALL-OVERFLOW.description": "当你的[gold]手牌[/gold]数量超过[blue]5[/blue]张时，可以触发[gold]溢出[/gold]效果。",
+  "SNECKODOWNFALL-OVERFLOW.title": "溢出"
 }

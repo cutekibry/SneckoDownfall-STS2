@@ -1,16 +1,16 @@
 {
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.title": "The Snecko",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.titleObject": "The Snecko",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.aromaPrinciple": "[sine][blue]Sssssssss....[/blue][/sine]",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.banter.alive.endTurnPing": "Sssssssss....",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.banter.dead.endTurnPing": "...",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.cardsModifierDescription": "Adds Snecko cards to the reward pool.",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.cardsModifierTitle": "Snecko Cards",
   "SNECKODOWNFALL-SNECKO_DOWNFALL.description": "A serpentine creature, native to the City.\nKnown for a stare that confuses predators.",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.pronounObject": "them",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.eventDeathPrevention": "Sssssssss....",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.goldMonologue": "Gold glitters strangely in your eyes.",
   "SNECKODOWNFALL-SNECKO_DOWNFALL.possessiveAdjective": "their",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.pronounObject": "them",
   "SNECKODOWNFALL-SNECKO_DOWNFALL.pronounPossessive": "theirs",
   "SNECKODOWNFALL-SNECKO_DOWNFALL.pronounSubject": "they",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.goldMonologue": "Gold glitters strangely in your eyes.",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.eventDeathPrevention": "Sssssssss....",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.aromaPrinciple": "[sine][blue]Sssssssss....[/blue][/sine]",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.cardsModifierTitle": "Snecko Cards",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.cardsModifierDescription": "Adds Snecko cards to the reward pool.",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.banter.alive.endTurnPing": "Sssssssss....",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.banter.dead.endTurnPing": "..."
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.title": "The Snecko",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.titleObject": "The Snecko"
 }

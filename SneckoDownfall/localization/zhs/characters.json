@@ -1,16 +1,16 @@
 {
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.title": "异蛇",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.titleObject": "异蛇",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.aromaPrinciple": "[sine][blue]嘶嘶嘶嘶……[/blue][/sine]",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.banter.alive.endTurnPing": "嘶嘶嘶嘶……",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.banter.dead.endTurnPing": "……",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.cardsModifierDescription": "异蛇的卡牌现在会出现在奖励和商店中。",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.cardsModifierTitle": "异蛇卡牌",
   "SNECKODOWNFALL-SNECKO_DOWNFALL.description": "生于城市之间的蜿蜒生物。\n以迷惑捕食者的凝视而闻名。",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.pronounObject": "它",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.eventDeathPrevention": "嘶嘶嘶嘶……",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.goldMonologue": "金币在你眼睛里闪着诡异的光。",
   "SNECKODOWNFALL-SNECKO_DOWNFALL.possessiveAdjective": "它的",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.pronounObject": "它",
   "SNECKODOWNFALL-SNECKO_DOWNFALL.pronounPossessive": "它的",
   "SNECKODOWNFALL-SNECKO_DOWNFALL.pronounSubject": "它",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.goldMonologue": "金币在你眼睛里闪着诡异的光。",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.eventDeathPrevention": "嘶嘶嘶嘶……",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.aromaPrinciple": "[sine][blue]嘶嘶嘶嘶……[/blue][/sine]",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.cardsModifierTitle": "异蛇卡牌",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.cardsModifierDescription": "异蛇的卡牌现在会出现在奖励和商店中。",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.banter.alive.endTurnPing": "嘶嘶嘶嘶……",
-  "SNECKODOWNFALL-SNECKO_DOWNFALL.banter.dead.endTurnPing": "……"
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.title": "异蛇",
+  "SNECKODOWNFALL-SNECKO_DOWNFALL.titleObject": "异蛇"
 }
