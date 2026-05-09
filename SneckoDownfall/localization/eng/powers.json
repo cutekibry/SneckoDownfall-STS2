@@ -1,4 +1,4 @@
-{
+﻿{
     "SNECKODOWNFALL-ACE_OF_WANDS_POWER.description": "Whenever you apply a debuff to an enemy, gain [gold]Block[gold].",
     "SNECKODOWNFALL-ACE_OF_WANDS_POWER.smartDescription": "Whenever you apply a debuff to an enemy, gain [blue]{Amount}/[blue] [gold]Block[gold].",
     "SNECKODOWNFALL-ACE_OF_WANDS_POWER.title": "Queen of Pentacles",
@@ -14,9 +14,15 @@
     "SNECKODOWNFALL-CONSTRICTED_POWER.description": "At the end of its turn, take damage.",
     "SNECKODOWNFALL-CONSTRICTED_POWER.smartDescription": "At the end of its turn, take [blue]{Amount}[/blue] damage.",
     "SNECKODOWNFALL-CONSTRICTED_POWER.title": "Constricted",
+    "SNECKODOWNFALL-FOUNTAIN_POWER.description": "Whenever you trigger [gold]Overflow[/gold], apply [gold]Venom[/gold] to an enemy.",
+    "SNECKODOWNFALL-FOUNTAIN_POWER.smartDescription": "Whenever you trigger [gold]Overflow[/gold], apply [blue]{Amount}[/blue] [gold]Venom[/gold] to an enemy.",
+    "SNECKODOWNFALL-FOUNTAIN_POWER.title": "Fountain",
     "SNECKODOWNFALL-MUDSHIELD_POWER.description": "Whenever you [gold]Muddle[/gold] a card, gain [gold]Block[/gold].",
     "SNECKODOWNFALL-MUDSHIELD_POWER.smartDescription": "Whenever you [gold]Muddle[/gold] a card, gain [blue]{Amount}[/blue] [gold]Block[/gold].",
     "SNECKODOWNFALL-MUDSHIELD_POWER.title": "Mud Shield",
+    "SNECKODOWNFALL-OVERWHELMING_PRESENCE_POWER.description": "The first time you play an [gold]Offclass[/gold] card each turn, draw a card.",
+    "SNECKODOWNFALL-OVERWHELMING_PRESENCE_POWER.smartDescription": "The first [blue]{Amount}[/blue] time you play an [gold]Offclass[/gold] card each turn, draw a card.",
+    "SNECKODOWNFALL-OVERWHELMING_PRESENCE_POWER.title": "Overwhelming",
     "SNECKODOWNFALL-VENOM_POWER.description": "Whenever you apply a debuff that isn't [gold]Venom[/gold] to this enemy, it loses HP.",
     "SNECKODOWNFALL-VENOM_POWER.smartDescription": "Whenever you apply a debuff that isn't [gold]Venom[/gold] to this enemy, it loses [blue]{Amount}[/blue] HP.",
     "SNECKODOWNFALL-VENOM_POWER.title": "Venom"
