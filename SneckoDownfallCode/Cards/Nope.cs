@@ -3,8 +3,7 @@ using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
 
@@ -15,6 +14,7 @@ public class Nope : SneckoDownfallCard
     {
         WithBlock(5, 3);
         WithKeyword(CardKeyword.Exhaust);
+        WithTip(StaticHoverTip.Transform);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
