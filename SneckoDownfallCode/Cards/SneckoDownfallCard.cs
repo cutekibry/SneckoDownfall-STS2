@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using SneckoDownfall.Character;
 using MegaCrit.Sts2.Core.Models;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
 
@@ -42,6 +43,8 @@ public abstract class SneckoDownfallCard :
     }
 
     public virtual Func<CardModel, bool>? GiftFilter => null;
+
+    public virtual Task AfterMuddled(PlayerChoiceContext choiceContext) => Task.CompletedTask;
 
     protected ConstructedCardModel WithMuddle(int baseVal, int upgrade = 0)
     {

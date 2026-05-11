@@ -1,9 +1,12 @@
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Cards;
 using SneckoDownfall.SneckoDownfallCode.CardSelectorPref;
+using SneckoDownfall.SneckoDownfallCode.Character;
 using SneckoDownfall.SneckoDownfallCode.Extensions;
 using SneckoDownfall.SneckoDownfallCode.Hooks;
 
@@ -11,6 +14,12 @@ namespace SneckoDownfall.SneckoDownfallCode.Actions;
 
 public static class SneckoActions
 {
+    public static IEnumerable<CardModel> GenerateRandomOffclassCards(Player player, int amount)
+    {
+        var candidates = player.UnlockState.CardPools.Where(p => p is not SneckoDownfallCardPool).SelectMany(p => p.AllCards).Where(c => c.CanBeGeneratedInCombat);
+        return CardFactory.GetDistinctForCombat(player, candidates, amount, player.RunState.Rng.CombatCardGeneration);
+    }
+
     public static async Task Muddle(PlayerChoiceContext ctx, CardModel card, bool cheaperOnly = false)
     {
         if (card.EnergyCost.Canonical < 0 || card.EnergyCost.CostsX)
