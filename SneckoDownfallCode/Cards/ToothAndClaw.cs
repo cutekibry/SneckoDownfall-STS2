@@ -34,7 +34,9 @@ public class ToothAndClaw : SneckoDownfallCard
     {
         await CommonActions.CardAttack(this, play).Execute(ctx);
 
-        for (var i = 0; i < GetCalculatedValue("Colors", play); i++)
+        var amount = GetCalculatedValue("Colors", play);
+
+        for (var i = 0; i < amount; i++)
         {
             var card = CombatState!.CreateCard<Shiv>(Owner);
             if (IsUpgraded)
