@@ -24,7 +24,7 @@ public static class SneckoActions
     {
         if (card.EnergyCost.Canonical < 0 || card.EnergyCost.CostsX)
         {
-            throw new InvalidOperationException($"Cannot muddle card with energy cost {card.EnergyCost.Canonical} or that costs X: {card.EnergyCost.CostsX}");
+            return;
         }
 
         var cost = card.Owner.RunState.Rng.CombatEnergyCosts.NextInt(

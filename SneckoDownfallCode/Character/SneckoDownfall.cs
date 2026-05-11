@@ -21,6 +21,7 @@ public class SneckoDownfall : PlaceholderCharacterModel
     public override Color RemoteTargetingLineColor => Color;
 
     public override Color RemoteTargetingLineOutline => Color;
+    public override Color EnergyLabelOutlineColor => new("0c3a36");
     public override CharacterGender Gender => CharacterGender.Neutral;
     public override int StartingHp => 85;
 
@@ -63,6 +64,7 @@ public class SneckoDownfall : PlaceholderCharacterModel
     }
 
     public override string CustomCharacterSelectBg => "res://SneckoDownfall/scenes/screens/char_select/char_select_bg_snecko_downfall.tscn";
+    public override string CustomEnergyCounterPath => "res://SneckoDownfall/scenes/combat/energy_counters/snecko_downfall_energy_counter.tscn";
 
     public override string CustomIconTexturePath => "character_icon_snecko_downfall.png".CharacterUiPath();
     public override string CustomIconOutlineTexturePath => "character_icon_snecko_downfall_outline.png".CharacterUiPath();

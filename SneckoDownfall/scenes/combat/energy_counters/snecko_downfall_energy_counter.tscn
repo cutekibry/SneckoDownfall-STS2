@@ -1,0 +1,257 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Texture2D" path="res://SneckoDownfall/images/charui/orb/layer1.png" id="2_layer1"]
+[ext_resource type="Texture2D" path="res://SneckoDownfall/images/charui/orb/layer2.png" id="3_layer2"]
+[ext_resource type="Texture2D" path="res://SneckoDownfall/images/charui/orb/layer4.png" id="5_layer4"]
+[ext_resource type="Texture2D" path="res://SneckoDownfall/images/charui/orb/layer5.png" id="6_layer5"]
+[ext_resource type="Texture2D" path="res://SneckoDownfall/images/charui/orb/layer6.png" id="7_layer6"]
+[ext_resource type="Texture2D" path="res://SneckoDownfall/images/charui/orb/vfx.png" id="10_vfx"]
+
+[sub_resource type="Curve" id="Curve_fade_back"]
+_data = [Vector2(0, 0.45), 0.0, -0.95, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fade_back"]
+curve = SubResource("Curve_fade_back")
+
+[sub_resource type="Curve" id="Curve_scale_back"]
+_data = [Vector2(0, 0.45), 0.0, 1.9, 0, 0, Vector2(0.35, 1), 0.0, 0.0, 0, 0, Vector2(1, 1.35), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_scale_back"]
+curve = SubResource("Curve_scale_back")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_back"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 0.28
+scale_max = 0.34
+scale_curve = SubResource("CurveTexture_scale_back")
+alpha_curve = SubResource("CurveTexture_fade_back")
+
+[sub_resource type="Curve" id="Curve_fade_front"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.2, 0.85), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.8, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_fade_front"]
+curve = SubResource("Curve_fade_front")
+
+[sub_resource type="Curve" id="Curve_scale_front"]
+_data = [Vector2(0, 0.22), 0.0, 2.5, 0, 0, Vector2(0.4, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 1.05), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_scale_front"]
+curve = SubResource("Curve_scale_front")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_front"]
+lifetime_randomness = 0.15
+particle_flag_disable_z = true
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 18.0
+initial_velocity_max = 42.0
+radial_velocity_min = 35.0
+radial_velocity_max = 85.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.18
+scale_curve = SubResource("CurveTexture_scale_front")
+alpha_curve = SubResource("CurveTexture_fade_front")
+
+[sub_resource type="Animation" id="Animation_orb_spin"]
+resource_name = "orb_spin"
+length = 18.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Layers/Layer2:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -360.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Layers/Layer4:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -360.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Layers/Layer5:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 360.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_orb_spin"]
+_data = {
+&"orb_spin": SubResource("Animation_orb_spin")
+}
+
+[node name="SneckoDownfallEnergyCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+pivot_offset = Vector2(64, 64)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="EnergyVfxBack" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(64, 64)
+
+[node name="Glow" type="GPUParticles2D" parent="EnergyVfxBack"]
+self_modulate = Color(0.42, 1, 0.82, 1)
+emitting = false
+amount = 1
+texture = ExtResource("10_vfx")
+lifetime = 0.55
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_back")
+
+[node name="Layers" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layer1" type="TextureRect" parent="Layers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_layer1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Layer2" type="TextureRect" parent="Layers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+mouse_filter = 2
+texture = ExtResource("3_layer2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Layer4" type="TextureRect" parent="Layers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+mouse_filter = 2
+texture = ExtResource("5_layer4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Layer5" type="TextureRect" parent="Layers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+mouse_filter = 2
+texture = ExtResource("6_layer5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RotationLayers" type="Control" parent="Layers"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layer6" type="TextureRect" parent="Layers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_layer6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EnergyVfxFront" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(64, 64)
+
+[node name="Burst" type="GPUParticles2D" parent="EnergyVfxFront"]
+self_modulate = Color(0.58, 1, 0.9, 1)
+emitting = false
+amount = 7
+texture = ExtResource("10_vfx")
+lifetime = 0.45
+one_shot = true
+explosiveness = 1.0
+randomness = 0.25
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_front")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -29.0
+offset_right = -16.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.964706, 0.886275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.188235)
+theme_override_colors/font_outline_color = Color(0.047059, 0.227451, 0.211765, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 16
+theme_override_font_sizes/font_size = 36
+text = "3/3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OrbAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_orb_spin")
+}
+autoplay = "orb_spin"
