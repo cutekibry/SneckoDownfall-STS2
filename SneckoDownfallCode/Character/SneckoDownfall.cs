@@ -25,7 +25,7 @@ public class SneckoDownfall : PlaceholderCharacterModel
     public override CharacterGender Gender => CharacterGender.Neutral;
     public override int StartingHp => 85;
 
-    public override int BaseOrbSlotCount => 1;
+    public override int BaseOrbSlotCount => 3;
 
     public override IEnumerable<CardModel> StartingDeck => [
         ModelDb.Card<StrikeSnecko>(),
