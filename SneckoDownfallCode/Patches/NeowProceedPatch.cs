@@ -1,36 +1,100 @@
 using HarmonyLib;
-using MegaCrit.Sts2.Core.Models.Events;
+using MegaCrit.Sts2.Core.Events;
+using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
-using MegaCrit.Sts2.Core.Rooms;
-using MegaCrit.Sts2.Core.Runs;
+using MegaCrit.Sts2.Core.Models.Events;
 using SneckoDownfall.SneckoDownfallCode.Relics;
 
 namespace SneckoDownfall.SneckoDownfallCode.Patches;
 
-[HarmonyPatch(typeof(NEventRoom), nameof(NEventRoom.Proceed))]
+[HarmonyPatch]
 public static class NeowProceedPatch
 {
-    private static bool Prefix(ref Task __result)
+    private static readonly AccessTools.FieldRef<NEventRoom, EventModel> EventField =
+        AccessTools.FieldRefAccess<NEventRoom, EventModel>("_event");
+
+    private static readonly Dictionary<SneckoSoul, Task> InitializationTasks = [];
+
+    [HarmonyPatch(typeof(NEventRoom), "SetOptions")]
+    [HarmonyPostfix]
+    private static void StartInitializationAfterNeowButtonsAreReady(EventModel eventModel)
     {
-        if (RunManager.Instance.DebugOnlyGetState()?.CurrentRoom is not EventRoom { LocalMutableEvent: Neow neow })
+        if (TryGetUninitializedSneckoSoul(eventModel, out var sneckoSoul))
+        {
+            TaskHelper.RunSafely(GetOrStartInitializationTask(sneckoSoul));
+        }
+    }
+
+    [HarmonyPatch(typeof(NEventRoom), nameof(NEventRoom.OptionButtonClicked))]
+    [HarmonyPrefix]
+    private static bool WaitForInitializationBeforeNeowOption(NEventRoom __instance, EventOption option, int index)
+    {
+        if (!TryGetUninitializedSneckoSoul(option, out var sneckoSoul))
         {
             return true;
         }
 
-        var sneckoSoul = neow.Owner?.Relics.OfType<SneckoSoul>().FirstOrDefault();
-        if (sneckoSoul == null || sneckoSoul.CharacterIds.Count > 0)
+        var initializationTask = GetOrStartInitializationTask(sneckoSoul);
+        if (initializationTask.IsCompletedSuccessfully)
         {
             return true;
         }
 
-        __result = ProceedAfterSneckoSoulInitialized(sneckoSoul);
+        TaskHelper.RunSafely(ClickAfterSneckoSoulInitialized(__instance, option, index, initializationTask));
         return false;
     }
 
-    private static async Task ProceedAfterSneckoSoulInitialized(SneckoSoul sneckoSoul)
+    private static async Task ClickAfterSneckoSoulInitialized(NEventRoom eventRoom, EventOption option, int index, Task initializationTask)
     {
-        await sneckoSoul.Initialize();
-        // NMapScreen.Instance.SetTravelEnabled(enabled: true);
-        // NMapScreen.Instance.Open();
+        await initializationTask;
+        eventRoom.OptionButtonClicked(option, index);
+    }
+
+    private static bool TryGetUninitializedSneckoSoul(EventOption option, out SneckoSoul sneckoSoul)
+    {
+        var eventRoom = NEventRoom.Instance;
+        if (eventRoom == null || EventField(eventRoom) is not Neow neow || !neow.CurrentOptions.Contains(option))
+        {
+            sneckoSoul = null!;
+            return false;
+        }
+
+        return TryGetUninitializedSneckoSoul(neow, out sneckoSoul);
+    }
+
+    private static bool TryGetUninitializedSneckoSoul(EventModel eventModel, out SneckoSoul sneckoSoul)
+    {
+        sneckoSoul = null!;
+        if (eventModel is not Neow neow || neow.IsFinished)
+        {
+            return false;
+        }
+
+        sneckoSoul = neow.Owner?.Relics.OfType<SneckoSoul>().FirstOrDefault()!;
+        return sneckoSoul != null && sneckoSoul.CharacterIds.Count == 0;
+    }
+
+    private static Task GetOrStartInitializationTask(SneckoSoul sneckoSoul)
+    {
+        if (!InitializationTasks.TryGetValue(sneckoSoul, out var task))
+        {
+            task = InitializeAndForget(sneckoSoul);
+            InitializationTasks[sneckoSoul] = task;
+        }
+
+        return task;
+    }
+
+    private static async Task InitializeAndForget(SneckoSoul sneckoSoul)
+    {
+        try
+        {
+            await sneckoSoul.Initialize();
+        }
+        finally
+        {
+            InitializationTasks.Remove(sneckoSoul);
+        }
     }
 }
