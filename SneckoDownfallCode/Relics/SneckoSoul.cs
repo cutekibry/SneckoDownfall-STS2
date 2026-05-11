@@ -84,7 +84,9 @@ public class SneckoSoul : SneckoDownfallRelic
             var secondCharacter = Owner.RunState.Rng.Shuffle.NextItem(characters.Where(c => c.Id != firstCharacter.Id))!;
 
             var firstCard = Owner.RunState.CreateCard<MockCharacterChoiceCard>(Owner);
-            var secondCard = Owner.RunState.CreateCard<MockCharacterChoiceCardSecond>(Owner);
+            var secondCard = Owner.RunState.CreateCard<MockCharacterChoiceSecondCard>(Owner);
+            firstCard.Mock(GetRepresentativeCard(firstCharacter));
+            secondCard.Mock(GetRepresentativeCard(secondCharacter));
 
             ((StringVar)firstCard.DynamicVars["Characters"]).StringValue = firstCharacter.Title.GetFormattedText();
             ((StringVar)secondCard.DynamicVars["Characters"]).StringValue = secondCharacter.Title.GetFormattedText();
