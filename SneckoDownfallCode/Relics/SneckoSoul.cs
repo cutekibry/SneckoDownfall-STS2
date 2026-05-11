@@ -20,7 +20,7 @@ public class SneckoSoul : SneckoDownfallRelic
 
     public override RelicRarity Rarity => RelicRarity.Starter;
 
-    private readonly List<ModelId> _characterIds = [];
+    private List<ModelId> _characterIds = [];
 
     public List<ModelId> CharacterIds
     {
@@ -69,6 +69,12 @@ public class SneckoSoul : SneckoDownfallRelic
             return character.StartingDeck.First();
         else
             return nonStrikeDefendCards.First();
+    }
+
+    protected override void AfterCloned()
+    {
+        base.AfterCloned();
+        _characterIds = [];
     }
 
     public async Task Initialize()
