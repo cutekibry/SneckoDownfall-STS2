@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -16,7 +17,7 @@ public static class SneckoActions
 {
     public static IEnumerable<CardModel> GenerateRandomOffclassCards(Player player, int amount)
     {
-        var candidates = player.UnlockState.CardPools.Where(p => p is not SneckoDownfallCardPool).SelectMany(p => p.AllCards).Where(c => c.CanBeGeneratedInCombat);
+        var candidates = player.UnlockState.CardPools.Where(p => p is not SneckoDownfallCardPool).SelectMany(p => p.AllCards).Where(c => c.CanBeGeneratedInCombat && c.Rarity != CardRarity.Basic && c.Rarity != CardRarity.Ancient);
         return CardFactory.GetDistinctForCombat(player, candidates, amount, player.RunState.Rng.CombatCardGeneration);
     }
 

@@ -31,7 +31,7 @@ public static class GiftSelector
             :
             sneckoSoul.CharacterIds.Select(ModelDb.GetById<CharacterModel>).Select(c => c.CardPool);
 
-        var cards = pools.SelectMany(c => c.GetUnlockedCards(player.UnlockState, player.RunState.CardMultiplayerConstraint));
+        var cards = pools.SelectMany(c => c.GetUnlockedCards(player.UnlockState, player.RunState.CardMultiplayerConstraint)).Where(c => c.Rarity != CardRarity.Basic && c.Rarity != CardRarity.Ancient);
 
         Log.Info($"GiftSelector: Found {cards.Count()} candidate cards for player {player} with filter {filter}");
         return cards.Where(filter);
