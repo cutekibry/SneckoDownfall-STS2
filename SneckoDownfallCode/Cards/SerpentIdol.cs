@@ -1,8 +1,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using SneckoDownfall.SneckoDownfallCode.Utils;
+using SneckoDownfall.SneckoDownfallCode.Actions;
 
 namespace SneckoDownfall.SneckoDownfallCode.Cards;
 
@@ -19,11 +18,7 @@ public class SerpentIdol : SneckoDownfallCard
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
-        var cards = GiftSelector.GetGiftCards(Owner, c => c.CanBeGeneratedInCombat).ToList()
-            .StableShuffle(Owner.RunState.Rng.CombatCardSelection)
-            .Take(DynamicVars.Cards.IntValue)
-            .Select(c => CombatState!.CreateCard(c, Owner))
-            .ToList();
+        var cards = SneckoActions.GenerateRandomOffclassCards(Owner, DynamicVars.Cards.IntValue).ToList();
         var selected = await CardSelectCmd.FromChooseACardScreen(ctx, cards, Owner, canSkip: true);
         if (selected == null)
             return;
