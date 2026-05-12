@@ -2,6 +2,8 @@
 using BaseLib.Utils.NodeFactories;
 using SneckoDownfall.SneckoDownfallCode.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using SneckoDownfall.SneckoDownfallCode.Cards;
@@ -65,6 +67,33 @@ public class SneckoDownfall : PlaceholderCharacterModel
 
     public override string CustomCharacterSelectBg => "res://SneckoDownfall/scenes/screens/char_select/char_select_bg_snecko_downfall.tscn";
     public override string CustomEnergyCounterPath => "res://SneckoDownfall/scenes/combat/energy_counters/snecko_downfall_energy_counter.tscn";
+    public override string CustomVisualPath => "res://SneckoDownfall/scenes/creature_visuals/snecko_downfall.tscn";
+
+    public override CreatureAnimator GenerateAnimator(MegaSprite controller)
+    {
+        var idle = new AnimState("Idle", isLooping: true);
+        var attack = new AnimState("Attack_2");
+        var cast = new AnimState("Attack");
+        var hit = new AnimState("Hit");
+
+        idle.AddBranch("Attack", attack);
+        idle.AddBranch("Cast", cast);
+        idle.AddBranch("Hit", hit);
+        idle.AddBranch("Dead", hit);
+        idle.AddBranch("Relaxed", idle);
+
+        attack.NextState = idle;
+        hit.NextState = idle;
+
+        var animator = new CreatureAnimator(idle, controller);
+        animator.AddAnyState("Idle", idle);
+        animator.AddAnyState("Revive", idle);
+        animator.AddAnyState("Attack", attack);
+        animator.AddAnyState("Cast", cast);
+        animator.AddAnyState("Hit", hit);
+        animator.AddAnyState("Dead", hit);
+        return animator;
+    }
 
     public override string CustomIconTexturePath => "character_icon_snecko_downfall.png".CharacterUiPath();
     public override string CustomIconOutlineTexturePath => "character_icon_snecko_downfall_outline.png".CharacterUiPath();
