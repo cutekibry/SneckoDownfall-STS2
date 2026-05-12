@@ -20,7 +20,7 @@ public class CheapStockPower : SneckoDownfallPower
             return;
         
         var candidateCards = PileType.Hand.GetPile(Owner.Player).Cards.Where(c => c.CanBeMuddled());
-        var sortedCandidateCards = candidateCards.ToList().StableShuffle(Owner.Player.RunState.Rng.Shuffle).OrderBy(c => c.EnergyCost.GetResolved());
+        var sortedCandidateCards = candidateCards.ToList().StableShuffle(Owner.Player.RunState.Rng.Shuffle).OrderBy(c => -c.EnergyCost.GetResolved());
 
         var cardsToMuddle = sortedCandidateCards.Take(Amount);
         await SneckoActions.Muddle(ctx, cardsToMuddle);
