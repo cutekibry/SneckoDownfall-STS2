@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8dw23257taa5"
-path="res://.godot/imported/blunder_guard_power_block.png-720849e104a8cd07b95e741769fa705c.ctex"
+uid="uid://bgeblcpm5162t"
+path="res://.godot/imported/blunder_guard_block_power.png-4762da3589c4f0e777ee9d3b5bdb481a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SneckoDownfall/images/powers/blunder_guard_power_block.png"
-dest_files=["res://.godot/imported/blunder_guard_power_block.png-720849e104a8cd07b95e741769fa705c.ctex"]
+source_file="res://SneckoDownfall/images/powers/blunder_guard_block_power.png"
+dest_files=["res://.godot/imported/blunder_guard_block_power.png-4762da3589c4f0e777ee9d3b5bdb481a.ctex"]
 
 [params]
 
