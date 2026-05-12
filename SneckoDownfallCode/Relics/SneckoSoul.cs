@@ -83,11 +83,12 @@ public class SneckoSoul : SneckoDownfallRelic
         characters.Remove(Owner.Character);
 
         var selectedCharacters = new List<ModelId>();
+        var rng = Owner.PlayerRng.Rewards;
 
         for (int i = 0; i < CharacterCount; i++)
         {
-            var firstCharacter = Owner.RunState.Rng.Shuffle.NextItem(characters)!;
-            var secondCharacter = Owner.RunState.Rng.Shuffle.NextItem(characters.Where(c => c.Id != firstCharacter.Id))!;
+            var firstCharacter = rng.NextItem(characters)!;
+            var secondCharacter = rng.NextItem(characters.Where(c => c.Id != firstCharacter.Id))!;
 
             var firstCard = Owner.RunState.CreateCard<MockCharacterChoiceCard>(Owner);
             var secondCard = Owner.RunState.CreateCard<MockCharacterChoiceSecondCard>(Owner);
